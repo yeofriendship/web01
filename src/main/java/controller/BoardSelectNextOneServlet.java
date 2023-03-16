@@ -25,9 +25,9 @@ public class BoardSelectNextOneServlet extends HttpServlet {
 	
 		long no = Long.parseLong(request.getParameter("no"));
 	
-		mapper.selectBoardNextOne(no);
+		long ret = mapper.selectBoardNextOne(no);
 		
-//		request.setAttribute("brd", );
+		request.setAttribute("no", ret);
 		
 		request.getRequestDispatcher("/WEB-INF/boardselectone1.jsp").forward(request, response);
 	}
